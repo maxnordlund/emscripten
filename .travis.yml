@@ -1,0 +1,16 @@
+language: c
+before_install: ./tests/travis.sh before_install
+install: ./tests/travis.sh install
+before_script:
+  - source ../emsdk-portable/emsdk_env.sh
+  - ./tests/travis.sh before_script
+script: ./tests/travis.sh script
+after_success: ./tests/travis.sh after_success
+after_failure: ./tests/travis.sh after_failure
+after_script: ./tests/travis.sh after_script
+addons:
+  sauce_connect: true
+env:
+  global:
+    - secure: nakfTpZLH20lqAkff+USYOXt/+uThAFOcGxVZq78/h/eGD0UYILyVEJMDETpeqgD+G7QQ/yUAtBVPjfTwJ2zDAWrFLe8bwlgUjkufC2NM/VHoCFNy/21do0V8ubZWecBwg2mbYiJGA5ly22YMxC8fFhDOBkDhoE8QmPWhv8Nij8=
+    - secure: ympS1BBmniDFNnzK0taHmbDKcVd2gIYCrCGrs7bbzwMzwvIovFYESd9LQlu8EnI2e0KTvt3ZvLbVJdj0GU7dko3ijiRfO6jvXam8tg0ql+8Dv1FSKquxezxw682Tdap9s9RaaVqUNeT9OxLTq+iiToTy5CehrplukBVvZZxnhiI=
